@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 }
 
 const PageHome = () => (
-  <main className=" flex min-h-screen w-full flex-col items-center bg-neutral-four md:max-w-8xl ">
+  <main className=" flex min-h-screen w-full flex-col items-center bg-neutral-four md:max-w-8xl md:bg-tablet xl:bg-desktop-wide lg:bg-desktop bg-hero-pattern bg-no-repeat">
     <NavBar />
     <HeroSection />
     <Feature />

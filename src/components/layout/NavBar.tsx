@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
@@ -9,18 +8,17 @@ import useDataStore from '@/hooks/useDataStore'
 
 const NavBar = () => {
   const { banner, btnText, menuList } = useDataStore()
-  const { svg, alt } = banner
   const [isMenu, toggleMenu] = useState(false)
 
   return (
-    <section key={0} className="flex w-full items-center justify-between gap-5 p-5 md:px-10 md:text-sm lg:px-20 lg:text-base">
+    <section className="flex w-full items-center justify-between gap-5 p-5 md:px-10 md:text-sm lg:px-20 lg:text-base">
       <div>
-        <Image width={146} height={24} priority src={svg} alt={alt} />
+        {banner.svg}
       </div>
 
       <ul className="hidden items-center gap-5 font-bold md:flex md:gap-3 md:text-sm lg:gap-10">
         {menuList.map((value) => (
-          <li key={value}><Link href="/" rel="noopenner">{value}</Link></li>
+          <li key={value}><Link className="hover:text-primary-two/70" href="/" rel="noopenner">{value}</Link></li>
         ))}
       </ul>
 

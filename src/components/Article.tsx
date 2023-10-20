@@ -11,6 +11,7 @@ const Article = () => {
   const [isSwap, toggleSwap] = useState(articleList[0])
 
   return (
+
     <section className="flex flex-col items-center pb-14 md:pb-24 xl:pb-32">
       <h1 className="pb-12 text-4xl font-bold">{header}</h1>
       <div className="carousel w-[375px] gap-5 pt-20 md:carousel-end md:rounded-box md:w-full md:pb-14">
@@ -31,6 +32,7 @@ const Article = () => {
       </div>
       <button className="w-fit rounded-full bg-primary-one px-10 py-4 text-sm text-specific shadow-lg shadow-primary-one/40 hover:bg-primary-one/80" type="button">{btnText}</button>
     </section>
+
   )
 }
 
