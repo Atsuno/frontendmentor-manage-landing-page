@@ -7,10 +7,8 @@ import { GiHamburgerMenu } from 'react-icons/gi'
 
 type NavItem = {
   svg: React.ReactNode,
-  item: Array<{
-    name: string,
-  }>,
-  btnItem: string,
+  item: Array<string>,
+  btnText: string,
 }
 const navItems: Array<NavItem> = [{
   svg: (
@@ -29,35 +27,25 @@ const navItems: Array<NavItem> = [{
         </g>
       </g>
     </svg>),
-  item: [{
-    name: 'Pricing',
-  }, {
-    name: 'Product',
-  }, {
-    name: 'About Us',
-  }, {
-    name: 'Careers',
-  }, {
-    name: 'Community',
-  }],
-  btnItem: 'Get Started',
+  item: ['Pricing', 'Product', 'About Us', 'Careers', 'Community'],
+  btnText: 'Get Started',
 }]
 
 const NavBar = () => {
   const [isMenu, toggleMenu] = useState(false)
 
   return (
-    navItems.map(({ svg, btnItem, item }) => (
-      <section key={0} className="flex w-full items-center justify-between gap-5 py-5 md:text-sm lg:text-base">
+    navItems.map(({ svg, btnText, item }) => (
+      <section key={0} className="flex w-full items-center justify-between gap-5 p-5 md:px-10 md:text-sm lg:px-20 lg:text-base">
         <div>{svg}</div>
 
         <ul className="hidden items-center gap-5 font-bold md:flex md:gap-3 md:text-sm lg:gap-10">
-          {item.map(({ name }) => (
-            <li key={name}><Link href="/" rel="noopenner">{name}</Link></li>
+          {item.map((value) => (
+            <li key={value}><Link href="/" rel="noopenner">{value}</Link></li>
           ))}
         </ul>
 
-        <button className="hidden rounded-full bg-primary-one text-sm text-specific shadow-lg shadow-primary-one/40 hover:bg-primary-one/80 md:block md:px-6 md:py-3 lg:w-fit lg:px-10 lg:py-4" type="button">{btnItem}</button>
+        <button className="hidden rounded-full bg-primary-one text-sm text-specific shadow-lg shadow-primary-one/40 hover:bg-primary-one/80 md:block md:px-6 md:py-3 lg:w-fit lg:px-10 lg:py-4" type="button">{btnText}</button>
 
         <div className="drawer drawer-end w-fit md:hidden">
           <input id="my-drawer" type="checkbox" className="drawer-toggle" />
@@ -71,8 +59,8 @@ const NavBar = () => {
             <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay" onClick={() => toggleMenu(!isMenu)} aria-hidden="true" />
             <ul className={`${!isMenu ? '' : 'justify-self-center'} menu mt-20 h-60 w-60  items-center bg-specific p-4 font-bold`}>
               {/* Sidebar content here */}
-              {navItems[0].item.map(({ name }) => (
-                <li key={name}><Link href="/" rel="noopenner">{name}</Link></li>
+              {item.map((value) => (
+                <li key={value}><Link href="/" rel="noopenner">{value}</Link></li>
               ))}
             </ul>
           </div>
