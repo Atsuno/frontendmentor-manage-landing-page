@@ -75,7 +75,7 @@ const useDataStore = create<DataStore>((set) => ({
   heroSection: {
     header: 'Bring everyone together to build better products.',
     paragrap: 'Manage makes it simple for software teams to plan day-to-day tasks while keeping the larger team goals in view.',
-    image: '/images/illustration-intro.svg',
+    image: './images/illustration-intro.svg',
     alt: 'illustration intro',
   },
   feature: {
@@ -99,22 +99,22 @@ const useDataStore = create<DataStore>((set) => ({
     header: 'What they’ve said',
     articleList: [{
       id: 'item1',
-      image: '/images/avatar-anisha.png',
+      image: './images/avatar-anisha.png',
       name: 'Anisha Li',
       articleText: '“Manage has supercharged our team’s workflow. The ability to maintain visibility on larger milestones at all times keeps everyone motivated.”',
     }, {
       id: 'item2',
-      image: '/images/avatar-ali.png',
+      image: './images/avatar-ali.png',
       name: 'Ali Bravo',
       articleText: '“We have been able to cancel so many other subscriptions since using Manage. There is no more cross-channel confusion and everyone is much more focused.”',
     }, {
       id: 'item3',
-      image: '/images/avatar-richard.png',
+      image: './images/avatar-richard.png',
       name: 'Richard Watts',
       articleText: '“Manage allows us to provide structure and process. It keeps us organized and focused. I can’t stop recommending them to everyone I talk to!”',
     }, {
       id: 'item4',
-      image: '/images/avatar-shanai.png',
+      image: './images/avatar-shanai.png',
       name: 'Shanai Gough',
       articleText: '“Their software allows us to track, manage and collaborate on our projects from anywhere. It keeps the whole team in-sync without being intrusive.”',
     }],
