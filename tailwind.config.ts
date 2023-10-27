@@ -31,7 +31,7 @@ const config: Config = {
         'hero-pattern': "url('/images/bg-tablet-pattern.svg'),url('/images/bg-tablet-pattern.svg')",
       },
       backgroundPosition: {
-        'desktop-wide': 'right -12vw top -22vh, left -30vw top 110vh',
+        'desktop-wide': 'right -12vw top -22vh, left -35vw top 135vh',
         tablet: 'right -61vw top -47vh, left -70vw top 65vh',
         desktop: 'right -35vw top -40vh, left -55vw top 75vh',
         'hero-pattern': 'right -130vw top -45vh, left 66vw top 25vh',

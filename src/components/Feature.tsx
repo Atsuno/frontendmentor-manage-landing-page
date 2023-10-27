@@ -7,7 +7,7 @@ const Feature = () => {
   const { header, lists, paragrap } = feature
 
   return (
-    <section className="flex flex-col py-10 md:flex-row md:px-10 md:text-left lg:px-20">
+    <section className="flex flex-col py-10 md:flex-row md:px-10 md:py-20 md:text-left lg:px-20">
       <div className="pb-14 text-center md:w-1/2 md:text-left lg:pr-10">
         <h1 className="px-5 pb-5 text-3xl font-bold md:px-0 xl:pb-10 xl:text-5xl">{header}</h1>
         <p className="px-2 text-neutral-one md:px-0 xl:pr-44 xl:text-xl">

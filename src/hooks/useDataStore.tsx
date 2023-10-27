@@ -2,8 +2,8 @@ import { ReactNode } from 'react'
 import { create } from 'zustand'
 
 type DataStore = {
-  inputText: string,
-  // regeexp: RegExp
+  email: string,
+  errorMessage: string
   btnText: string,
   menuList: Array<string>,
   banner: {
@@ -43,7 +43,6 @@ type DataStore = {
     copyright: string,
     input: {
       inputPlaceholder: string,
-      inputValid: string,
     }
     sociallists: Array<{
       link: string,
@@ -51,13 +50,13 @@ type DataStore = {
       social: ReactNode
     }>,
   }
-  changeInputText: (inputText: string) => void
-  submit: (emailText: string) => boolean
+  changeInputText: (email: string) => void
+  submit: (email: string) => void
 }
 
-const useDataStore = create<DataStore>((set, get) => ({
-  inputText: '',
-  // regeexp: (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/),
+const useDataStore = create<DataStore>((set) => ({
+  email: '',
+  errorMessage: '',
   btnText: 'Get Started',
   menuList: ['Pricing', 'Product', 'About Us', 'Careers', 'Community'],
   banner: {
@@ -129,7 +128,6 @@ const useDataStore = create<DataStore>((set, get) => ({
     copyright: 'Copyright 2020. All Rights Reserved',
     input: {
       inputPlaceholder: ' Updates in your inbox…',
-      inputValid: 'Please insert a valid email',
     },
     sociallists: [{
       link: '/',
@@ -168,22 +166,22 @@ const useDataStore = create<DataStore>((set, get) => ({
         </svg>),
     }],
   },
-  changeInputText: (inputText) => {
+  changeInputText: (email) => {
     set({
-      inputText,
+      email,
     })
   },
-  submit: (inputText) => {
-    const inputTextNotEmtry = inputText.length
-    if (inputTextNotEmtry) {
+  submit: (email) => {
+    const emailNotEmtry = email.length
+    if (!emailNotEmtry) {
       set({
-        inputText: get().inputText,
+        errorMessage: 'Please insert a valid email',
       })
-
-      return true
+    } else {
+      set({
+        errorMessage: 'Email is valid',
+      })
     }
-
-    return false
   },
 }))
 

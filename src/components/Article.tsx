@@ -14,9 +14,9 @@ const Article = () => {
 
     <section className="flex flex-col items-center pb-14 md:pb-24 xl:pb-32">
       <h1 className="pb-12 text-4xl font-bold">{header}</h1>
-      <div className="carousel w-[375px] gap-5 pt-20 md:carousel-end md:rounded-box md:w-full md:pb-14">
+      <div className="carousel w-[375px] gap-5 pt-20 md:carousel-end md:rounded-box md:w-full md:pb-14 ">
         {articleList.map(({ name, image, id, articleText }, index) => (
-          <div key={id} id={id} onClick={() => toggleSwap(articleList[index])} aria-hidden="true" className="carousel-item w-full flex-col items-center justify-center gap-5 bg-neutral-one/5 text-center md:w-1/3">
+          <div key={id} id={id} onChange={() => toggleSwap(articleList[index])} aria-hidden="true" className="carousel-item w-full flex-col items-center justify-center gap-5 bg-neutral-four text-center md:w-1/3">
             <div className="w-20">
               <Image className="-mt-10" width={144} height={144} priority src={image} alt={name} />
             </div>

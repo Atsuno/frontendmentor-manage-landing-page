@@ -4,9 +4,9 @@ import Link from 'next/link'
 import useDataStore from '@/hooks/useDataStore'
 
 const Contact = () => {
-  const { contact, banner, submit, changeInputText, inputText } = useDataStore()
+  const { contact, banner, submit, changeInputText, email, errorMessage } = useDataStore()
   const { copyright, btnText, input, menulist, sociallists } = contact
-  const { inputPlaceholder, inputValid } = input
+  const { inputPlaceholder } = input
 
   return (
     <section className="flex w-full flex-col-reverse items-center justify-between gap-10 bg-neutral-two px-10 py-16 text-specific md:flex-row xl:px-20">
@@ -50,15 +50,24 @@ const Contact = () => {
       <div className="flex w-full flex-col md:w-1/3 md:items-end md:justify-between md:gap-20">
         <form className="" action="#">
           <div className="flex gap-5">
-            <input type="email" className="input input-bordered w-full" value={inputText} onChange={(event) => changeInputText(event.target.value)} placeholder={inputPlaceholder} />
+            <input
+              required
+              type="email"
+              id="message"
+              name="message"
+              className="input input-bordered w-full"
+              value={email}
+              onChange={(event) => changeInputText(event.target.value)}
+              placeholder={inputPlaceholder}
+            />
             <div className="rounded-full bg-specific">
-              <button type="submit" onClick={() => submit(inputText)} className="h-full rounded-full bg-primary-one px-5 py-1 hover:bg-primary-one/80 ">
+              <button type="submit" onClick={() => submit(email)} className="h-full rounded-full bg-primary-one px-5 py-1 hover:bg-primary-one/80 ">
                 {btnText}
               </button>
             </div>
           </div>
-          <label className=" label h-5">
-            <span className={`${inputText ? 'block' : 'hidden'} label-text-alt text-primary-one `}>{inputValid}</span>
+          <label className=" label h-7">
+            { errorMessage && <span className=" label-text-alt text-primary-one ">{errorMessage}</span> }
           </label>
 
         </form>
