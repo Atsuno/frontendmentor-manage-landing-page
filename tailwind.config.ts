@@ -1,6 +1,8 @@
 import daisyui from 'daisyui'
 import type { Config } from 'tailwindcss'
 
+const REPO_PATH = '/frontendmentor-manage-landing-page'
+
 const config: Config = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -26,9 +28,9 @@ const config: Config = {
         '8xl': '1440px',
       },
       backgroundImage: {
-        'simplify-mobile': "url('/images/bg-simplify-section-mobile.svg')",
-        'simplify-desktop': "url('/images/bg-simplify-section-desktop.svg')",
-        'hero-pattern': "url('/images/bg-tablet-pattern.svg'),url('/images/bg-tablet-pattern.svg')",
+        'simplify-mobile': `url('${REPO_PATH}/images/bg-simplify-section-mobile.svg')`,
+        'simplify-desktop': `url('${REPO_PATH}/images/bg-simplify-section-desktop.svg')`,
+        'hero-pattern': `url('${REPO_PATH}/images/bg-tablet-pattern.svg'),url('${REPO_PATH}/images/bg-tablet-pattern.svg')`,
       },
       backgroundPosition: {
         'desktop-wide': 'right -12vw top -22vh, left -35vw top 135vh',
